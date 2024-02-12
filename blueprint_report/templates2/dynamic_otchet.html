@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+    <title>Отчёты | Интернет провайдер</title>
+</head>
+<body>
+	<nav>
+		<div class="nav_block">
+			<a href="/" ><h2 class="navigation">Главная</h2></a>
+			<a href="{{url_for('bp_query.query_index')}}" ><h2 class="navigation" id="prods">Запросы</h2></a>
+<!--			<a href="" ><h2 class="navigation">Авторизация</h2></a>-->
+			<a href ="{{url_for('bp_report.report')}}"><h2 class="navigation" >Отчёты</h2></a>
+			<a href = "/exit"><h2 class="navigation" id="exit">Выйти</h2></a>
+		</div>
+	</nav>
+    <main>
+        <center>
+            <div class="rectangle">
+                <h1>{{prod_title}}</h1>
+                <table>
+                                <tr>
+                                    {% if 'order_year' in products[0].keys() %}
+                                    <th>Год</th>
+                                    {% endif %}
+                                    {% if 'order_month' in products[0].keys() %}
+                                    <th>Месяц</th>
+                                    {% endif %}
+                                    {% if 'product_id' in products[0].keys() %}
+                                    <th>Идентификатор услуги</th>
+                                    {% endif %}
+                                    {% if 'quantity' in products[0].keys() %}
+                                    <th>Название услуги</th>
+                                    {% endif %}
+                                    {% if 'quantity' in products[0].keys() %}
+                                    <th>Количество подключений</th>
+                                    {% endif %}
+                                    {% if 'cost' in products[0].keys() %}
+                                    <th>Общая стоимость</th>
+                                    {% endif %}
+                                </tr>
+                                {% for product in products %}
+                                <tr>
+                                     {% if 'order_year' in products[0].keys() %}
+                                    <td>{{product['order_year']}}</td>
+                                    {% endif %}
+                                     {% if 'order_month' in products[0].keys() %}
+                                    <td>{{product['order_month']}}</td>
+                                    {% endif %}
+                                    {% if 'product_id' in products[0].keys() %}
+                                    <td>{{product['product_id']}}</td>
+                                    {% endif %}
+                                    {% if 'product_name' in products[0].keys() %}
+                                    <td>{{product['product_name']}}</td>
+                                    {% endif %}
+                                    {% if 'quantity' in products[0].keys() %}
+                                    <td>{{product['quantity']}}</td>
+                                    {% endif %}
+                                    {% if 'cost' in products[0].keys() %}
+                                    <td>{{product['cost']}}</td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </table>
+                <form action="{{url_for('bp_report.report')}}">
+                    <input type="submit" class="button" value="Назад">
+                </form>
+            </div>
+        </center>
+    </main>
+</body>
+</html>

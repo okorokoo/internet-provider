@@ -1,0 +1,1 @@
+insert internet_provider.zakaz values(NULL, '$user_date', '$user_id')

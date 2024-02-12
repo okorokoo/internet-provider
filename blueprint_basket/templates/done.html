@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>НАШ МАГАЗИН</title>
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav>
+		<div class="nav_block">
+			<a href="/" ><h2 class="navigation">Главная</h2></a>
+			<a href ="{{url_for('bp_basket.start')}}"><h2 class="navigation" >Корзина</h2></a>
+			<a href = "/exit"><h2 class="navigation" id="exit">Выйти</h2></a>
+		</div>
+	</nav>
+<main>
+    <center><div class="rectangle"><h2>Ваш заказ успешно создан</h2></div></center>
+</main>
+</body>
+</html>

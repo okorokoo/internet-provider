@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выберите действие | Интернет провайдер</title>
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav>
+		<div class="nav_block">
+			<a href="/" ><h2 class="navigation">Главная</h2></a>
+			<a href="{{url_for('bp_query.query_index')}}" ><h2 class="navigation" id="prods">Запросы</h2></a>
+<!--			<a href="" ><h2 class="navigation">Авторизация</h2></a>-->
+			<a href ="{{url_for('bp_report.report')}}"><h2 class="navigation" >Отчёты</h2></a>
+			<a href = "/exit"><h2 class="navigation" id="exit">Выйти</h2></a>
+		</div>
+	</nav>
+    <center>
+        <main>
+            <div class="rectangle">
+                <h1> Выберите действие</h1>
+                <div class="request">
+                    <a href="{{url_for('bp_report.report_create')}}"><div class="request_button">Создать отчет</div></a>
+                    <a href="{{url_for('bp_report.check_reports')}}"><div class="request_button">Просмотреть существующие отчеты</div></a>
+                    <a href="{{url_for('main_menu')}}"><div class="request_button">Вернуться в меню</div></a>
+                </div>
+            </div>
+        </main>
+    </center>
+</body>
+</html>

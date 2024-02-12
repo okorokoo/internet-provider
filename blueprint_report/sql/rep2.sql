@@ -1,0 +1,1 @@
+select revenue from internet_provider.report2 where order_year = '$in_year' and order_month = '$in_month';

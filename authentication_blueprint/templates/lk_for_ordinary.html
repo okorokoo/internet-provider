@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link href = "{{url_for('static', filename = 'style_sem2.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+<center>
+    <nav>
+		<div class="nav_block">
+			<a href="/" ><h2 class="navigation">Главная</h2></a>
+			<a href ="{{url_for('auth_bp.lk_index')}}"><h2 class="navigation" id="lk">Личный кабинет</h2></a>
+		</div>
+	</nav>
+    <br><br>
+    <div class="rectangle">
+        <h2>Вы авторизированы</h2>
+        личный кабинет<br><br>
+        <img src="../static/sad_clown.jpg" style="  width: 200px; height: 200px;"><br>
+        {% if user_group %}
+        <h3>права: {{user_group}}</h3>
+            {% endif %}
+        <a href = "/exit" style="color: green;"><button>Выйти</button></a>
+        <input class="button" type="button" value="Назад" onclick="history.back()">
+    </div>
+</center>
+
+</body>
+</html>

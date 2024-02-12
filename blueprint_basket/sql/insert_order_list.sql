@@ -1,0 +1,1 @@
+insert zakaz_data values(NULL, '$id_product', '$product_amount', '$product_price', '$order_id')

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+    <title>Создание отчёта | Интернет провайдер</title>
+</head>
+<body>
+    <nav>
+		<div class="nav_block">
+			<a href="/" ><h2 class="navigation">Главная</h2></a>
+			<a href="{{url_for('bp_query.query_index')}}" ><h2 class="navigation" id="prods">Запросы</h2></a>
+<!--			<a href="" ><h2 class="navigation">Авторизация</h2></a>-->
+			<a href ="{{url_for('bp_report.report')}}"><h2 class="navigation" >Отчёты</h2></a>
+			<a href = "/exit"><h2 class="navigation" id="exit">Выйти</h2></a>
+		</div>
+	</nav>
+    <main>
+        <center>
+            <div class="rectangle">
+                <form action="" method=POST class="search_form">
+                    <h1>Введите год:</h1>
+                    <div class="input_form" style="justify-content: center">
+                        <input type="text" name="in_date" id="in_date">
+                    </div>
+                    <br><br>
+                    <h1>Введите месяц:</h1>
+                    <div class="input_form" style="justify-content: center">
+                        <input type="text" name="out_date" id="out_date">
+                    </div>
+                    <br><br>
+                    <div class="buttons">
+                        <input type="submit" class="button" value="Создать">
+                        <input type="reset" class="button" value="Очистить">
+                    </div>
+                </form>
+                <input class="button" type="button" value="Назад" onclick="history.back()">
+                {% if error %}
+                <p class=error><strong>Произошла ошибка:</strong> {{ error }}</p>
+                {% endif %}
+            </div>
+        </center>
+    </main>
+</body>
+</html>

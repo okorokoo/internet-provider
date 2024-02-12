@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+    <title>Supermarket21</title>
+</head>
+<body>
+<main>
+    <h1>{{prod_title}}</h1>
+    <table>
+                    <tr>
+                        {% if 'start_date' in products[0].keys() %}
+                        <th>Дата начала</th>
+                        {% endif %}
+                        {% if 'end_date' in products[0].keys() %}
+                        <th>Дата конца</th>
+                        {% endif %}
+                        {% if 'cost' in products[0].keys() %}
+                        <th>Стоимость</th>
+                        {% endif %}
+                    </tr>
+                    {% for product in products %}
+                    <tr>
+                         {% if 'start_date' in products[0].keys() %}
+                        <td>{{product['start_date']}}</td>
+                        {% endif %}
+                         {% if 'end_date' in products[0].keys() %}
+                        <td>{{product['end_date']}}</td>
+                        {% endif %}
+                        {% if 'cost' in products[0].keys() %}
+                        <td>{{product['cost']}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+    <form action="{{url_for('main_menu')}}">
+        <input type="submit" class="button" value="Вернуться в главное меню">
+    </form>
+</main>
+</body>
+</html>

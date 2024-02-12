@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчёт создан</title>
+    <link href="{{url_for('static', filename='style_sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="header">
+            <div class="menu">
+                <nav class="menu__body">
+                    <ul class="menu__list">
+                        <li><a href={{url_for('main_menu')}} class="menu__link">Вернуться в меню</a></li>
+                        <li><a href={{url_for('exit_func')}} class="menu__link">Выйти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section class="body">
+            <h1 class="title">
+                Меню отчётов
+            </h1>
+            <center>
+                <label class="auth-form__lable">Отчет создан!</label>
+                <a href={{url_for('bp_report.start_report')}} class="auth-form__submit"> Вернуться в главное меню</a>
+            </center>
+        </section>
+    </div>
+</body>
+</html>
