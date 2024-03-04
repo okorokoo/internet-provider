@@ -3,3 +3,6 @@
 ![report.png](images/report.png)
 ![report_result.png](images/report_result.png)
 ![log_menu.png](images/log_menu.png)
+![basket.png](images/basket.png)
+![basket_added.png](images/basket_added.png)
+![order_success.png](images/order_success.png)

@@ -22,10 +22,6 @@ app.secret_key = 'You will never guess'
 @app.route('/')
 @login_required
 def main_menu():
-    # if session['user_group'] == 'ordinary':
-    #     return render_template('main_for_ordinary.html')
-    # else:
-    #     return render_template('main.html')
     if session.get('user_group', None) == 'ordinary':
         return render_template('main_for_ordinary.html')
     return render_template('main.html')

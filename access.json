@@ -1,4 +1,4 @@
-{"admin": ["bp_query"],
+{"admin": ["bp_query", "bp_report"],
 "manager": ["bp_query","bp_report"],
 "ordinary": ["bp_basket"]
 }
